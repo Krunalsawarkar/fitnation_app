@@ -9,8 +9,15 @@ import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Mail } from "lucide-react"
 
 const schema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  name: z.string()
+    .min(2, "Name must be at least 2 characters")
+    .max(50, "Name must not exceed 50 characters")
+    .regex(/^[a-zA-Z\s]*$/, "Name can only contain letters and spaces"),
+  email: z.string()
+    .email("Please enter a valid email address")
+    .min(5, "Email is too short")
+    .max(100, "Email is too long")
+    .toLowerCase(),
   password: z.string().min(8, "Password must be at least 8 characters"),
   confirmPassword: z.string()
 }).refine((data) => data.password === data.confirmPassword, {

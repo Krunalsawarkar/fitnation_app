@@ -11,7 +11,14 @@ import { Slider } from "@/components/ui/slider"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 const schema = z.object({
-  dob: z.string().min(1, "Date of birth is required"),
+  dob: z.string()
+    .min(1, "Date of birth is required")
+    .refine((val) => {
+      const date = new Date(val);
+      const now = new Date();
+      const age = now.getFullYear() - date.getFullYear();
+      return age >= 13 && age <= 100;
+    }, "You must be between 13 and 100 years old"),
   gender: z.string().min(1, "Please select a gender"),
   height: z.number().min(100, "Height is required"),
   weight: z.number().min(30, "Weight is required"),

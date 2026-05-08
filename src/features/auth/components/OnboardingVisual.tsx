@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Activity } from "lucide-react"
+import { MotionBackground } from "@/components/layout/MotionBackground"
 
 interface OnboardingVisualProps {
   currentStep: number
@@ -7,35 +8,27 @@ interface OnboardingVisualProps {
 
 export function OnboardingVisual({ currentStep }: OnboardingVisualProps) {
   return (
-    <div className="hidden md:flex flex-1 relative bg-muted items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={`https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop`} 
-          alt="Fitness Motivation" 
-          className="w-full h-full object-cover opacity-80"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-accent/80 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+    <div className="hidden md:flex flex-1 relative bg-background items-center justify-center overflow-hidden">
+      <MotionBackground />
       
-      <div className="relative z-10 max-w-lg px-12 text-white">
+      <div className="relative z-10 max-w-lg px-12 text-foreground">
         <motion.div
           key={currentStep}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/30">
-            <Activity className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 bg-card/80 backdrop-blur-md rounded-none flex items-center justify-center mb-8 border-2 border-primary">
+            <Activity className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-4xl font-bold mb-6 leading-tight">
+          <h2 className="text-5xl font-black mb-6 leading-tight uppercase tracking-tighter text-foreground">
             {currentStep === 1 && "Start your transformation today."}
             {currentStep === 2 && "Personalized for your body type."}
             {currentStep === 3 && "Set goals. Crush them. Repeat."}
             {currentStep === 4 && "Fuel your active lifestyle."}
             {currentStep === 5 && "Join the community."}
           </h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-muted-foreground font-medium">
             {currentStep === 1 && "Join thousands of users who have already achieved their fitness goals with FitTrack."}
             {currentStep === 2 && "We use these details to calculate your BMI and daily caloric needs accurately."}
             {currentStep === 3 && "Whether you want to lose weight or build muscle, we have the perfect plan."}

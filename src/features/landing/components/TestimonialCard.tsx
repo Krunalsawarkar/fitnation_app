@@ -11,29 +11,37 @@ export interface TestimonialCardProps {
 
 export function TestimonialCard({ name, role, content, avatar, rating }: TestimonialCardProps) {
   return (
-    <Card className="h-full border-none shadow-md bg-background relative overflow-hidden group">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
-      <CardContent className="pt-8">
-        <div className="flex gap-1 mb-4">
+    <Card className="h-full p-10 group border-border hover:border-primary/50 transition-all bg-card/80 backdrop-blur-md relative overflow-hidden">
+      {/* Decorative quote mark */}
+      <div className="absolute -top-4 -left-4 text-primary/10 text-9xl font-black select-none pointer-events-none group-hover:text-primary/20 transition-colors">
+        "
+      </div>
+      
+      <div className="relative z-10">
+        <div className="flex gap-1 mb-8">
           {[...Array(rating)].map((_, i) => (
-            <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+            <Star key={i} className="w-4 h-4 fill-primary text-primary" />
           ))}
         </div>
-        <p className="text-foreground/80 mb-6 relative z-10 italic">
-          "{content}"
+        
+        <p className="text-xl text-foreground font-medium leading-relaxed mb-10 italic">
+          {content}
         </p>
+        
         <div className="flex items-center gap-4">
-          <img
-            src={avatar}
-            alt={name}
-            className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
-          />
+          <div className="w-14 h-14 rounded-none border-2 border-primary overflow-hidden">
+            <img
+              src={avatar}
+              alt={name}
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
           <div>
-            <h4 className="font-semibold text-sm">{name}</h4>
-            <p className="text-muted-foreground text-xs">{role}</p>
+            <h4 className="font-black uppercase tracking-widest text-sm text-foreground">{name}</h4>
+            <p className="text-primary text-xs font-bold uppercase tracking-tighter mt-1">{role}</p>
           </div>
         </div>
-      </CardContent>
+      </div>
     </Card>
   )
 }

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { TestimonialCard } from "./components/TestimonialCard"
+import { MaskedHeading } from "@/components/ui/MaskedHeading"
 
 const testimonials = [
   {
@@ -27,24 +28,33 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Testimonials</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">Loved by thousands</h3>
-          <p className="text-muted-foreground text-lg">
-            Don't just take our word for it. Here's what our community has to say about FitTrack.
+    <section id="testimonials" className="py-32 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block"
+          >
+            The Collective
+          </motion.span>
+          <MaskedHeading className="text-5xl md:text-7xl mb-6">
+            Elite Standards
+          </MaskedHeading>
+          <p className="text-foreground/40 text-lg md:text-xl font-medium">
+            Hear from the individuals who have transformed their lives using 
+            our architectural approach to fitness.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <TestimonialCard {...testimonial} />
             </motion.div>

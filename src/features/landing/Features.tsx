@@ -1,58 +1,77 @@
 import { Activity, Apple, LineChart, Users } from "lucide-react"
 import { motion } from "framer-motion"
 import { FeatureCard } from "./components/FeatureCard"
+import { MaskedHeading } from "@/components/ui/MaskedHeading"
 
 const features = [
   {
-    title: "Workout Tracking",
-    description: "Log your sets, reps, and weights with our intuitive interface. Access a library of over 500+ exercises.",
+    title: "Performance Tracking",
+    description: "Architectural precision in every rep. Log sets, weights, and momentum with an interface designed for peak efficiency.",
     icon: Activity,
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
+    color: "text-primary",
+    bgColor: "bg-primary/5",
   },
   {
-    title: "Nutrition Plans",
-    description: "Personalized meal plans based on your goals. Track macros, calories, and discover healthy recipes.",
+    title: "Nutritional Matrix",
+    description: "Systematize your intake. Personalized macronutrient scaling and biometric synchronization.",
     icon: Apple,
-    color: "text-green-500",
-    bgColor: "bg-green-500/10",
+    color: "text-foreground",
+    bgColor: "bg-foreground/5",
   },
   {
-    title: "Progress Analytics",
-    description: "Visualize your transformation with beautiful charts. Track body measurements and performance metrics.",
+    title: "Biometric Insights",
+    description: "Visualize your evolution with surgical detail. High-fidelity charts and transformation analytics.",
     icon: LineChart,
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
+    color: "text-primary",
+    bgColor: "bg-primary/5",
   },
   {
-    title: "Community",
-    description: "Join challenges, share your success, and get motivated by a community of fitness enthusiasts.",
+    title: "The Collective",
+    description: "Join the elite hierarchy. Challenges, success protocols, and motivational synchronization.",
     icon: Users,
-    color: "text-orange-500",
-    bgColor: "bg-orange-500/10",
+    color: "text-foreground",
+    bgColor: "bg-foreground/5",
   },
 ]
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Features</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">Everything you need to succeed</h3>
-          <p className="text-muted-foreground text-lg">
-            We've built a comprehensive toolkit to support every aspect of your fitness journey, all in one beautiful app.
-          </p>
+    <section id="features" className="py-32 bg-background relative overflow-hidden">
+      {/* Decorative vertical line */}
+      <div className="absolute left-1/2 top-0 w-[1px] h-32 bg-gradient-to-b from-primary/50 to-transparent"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="max-w-2xl">
+            <motion.span 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block"
+            >
+              Core Infrastructure
+            </motion.span>
+            <MaskedHeading className="text-5xl md:text-7xl mb-6">
+              Precision Engineered
+            </MaskedHeading>
+            <p className="text-foreground/40 text-lg md:text-xl font-medium">
+              Every feature is built with the athlete in mind, focusing on clarity, 
+              speed, and actionable biometrics.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <div className="w-12 h-12 border-2 border-foreground/10 flex items-center justify-center font-black">01</div>
+            <div className="w-12 h-12 border-2 border-primary flex items-center justify-center font-black text-primary">04</div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <FeatureCard {...feature} />
             </motion.div>

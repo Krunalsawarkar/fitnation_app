@@ -10,6 +10,11 @@ FitNation is a premium, high-performance fitness platform engineered for surgica
 
 ### 1. Cinematic Landing Page
 The landing page features a motion-driven hero section with "Masked Heading" emergence and organic light trails that react to the current theme.
+
+| Dark Mode (Architectural) | Light Mode (Clean) |
+| :---: | :---: |
+| ![Landing Dark](https://via.placeholder.com/600x400?text=Landing+Page+Dark+Mode) | ![Landing Light](https://via.placeholder.com/600x400?text=Landing+Page+Light+Mode) |
+
 - **Dynamic Theming**: Seamless switching between High-Contrast Dark and Pure Light modes.
 - **Motion Backgrounds**: Interactive SVG trails that provide depth and cinematic energy.
 

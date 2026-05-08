@@ -13,22 +13,28 @@ The landing page features a motion-driven hero section with "Masked Heading" eme
 
 | Dark Mode (Architectural) | Light Mode (Clean) |
 | :---: | :---: |
-| ![Landing Dark](public/screenshots/landing-dark.png) | ![Landing Light](public/screenshots/landing-light.png) |
+| ![Landing Dark](public/screenshots/landing_dark.png) | ![Landing Light](public/screenshots/landing_light.png) |
 
 - **Dynamic Theming**: Seamless switching between High-Contrast Dark and Pure Light modes.
 - **Motion Backgrounds**: Interactive SVG trails that provide depth and cinematic energy.
 
 ### 2. Biometric Onboarding Flow
 A multi-step, strictly validated flow built with **React Hook Form** and **Zod**.
-![Onboarding Flow](public/screenshots/onboarding.png)
 
-- **Account Creation**: Secure credentials setup with real-time complexity tracking.
-- **Biometric Calibration**: Precision sliders for height and weight calibration.
+| Step 1: Identity | Step 2: Biometrics | Step 3: Protocols |
+| :---: | :---: | :---: |
+| ![Auth 1](public/screenshots/authflow1.png) | ![Auth 2](public/screenshots/authflow2.png) | ![Auth 3](public/screenshots/authflow3.png) |
+
+| Step 4: Activity | Step 5: Finalize |
+| :---: | :---: |
+| ![Auth 4](public/screenshots/authflow4.png) | ![Auth 5](public/screenshots/authflow5.png) |
+
 - **Protocol Selection**: Goal-oriented selection (Weight Loss, Muscle Build, Flexibility) with architectural cards.
-- **Activity Profiling**: Comprehensive assessment from Sedentary to Athlete levels.
+- **Biometric Calibration**: Precision sliders for height and weight calibration.
 
 ### 3. Protocol Command Center (Dashboard)
 A high-fidelity interface for biometric monitoring and activity orchestration.
+
 ![Dashboard View](public/screenshots/dashboard.png)
 
 - **Metabolic Burn Tracking**: Real-time caloric output visualization.
@@ -49,10 +55,10 @@ A high-fidelity interface for biometric monitoring and activity orchestration.
 ---
 
 ## 🎨 Design Decisions
-- **Architectural Aesthetic**: "Elite Performance" vibe. Uses pure `#000000` black and `#FFFFFF` white backgrounds with vibrant `#FF4D00` (Safety Orange) accents to convey urgency and energy.
+- **Architectural Aesthetic**: "Elite Performance" vibe. Uses pure `#000000` black and `#FFFFFF` white backgrounds with vibrant `#FF4D00` (Safety Orange) accents.
 - **Geometry**: Sharp architectural edges (`border-radius: 0`) across all cards and buttons to represent structural integrity and precision.
 - **Motion System**: Organic, fluid light trails in the background that adapt to theme changes, providing a "living" UI that feels reactive and alive.
-- **Theme Engine**: A robust CSS-variable-based system with `color-scheme: dark` support, ensuring native-feeling UI controls (like the calendar picker).
+- **Theme Engine**: A robust CSS-variable-based system with `color-scheme: dark` support, ensuring native-feeling UI controls.
 
 ---
 

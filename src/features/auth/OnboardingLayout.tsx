@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useOnboardingStore } from "@/store/useOnboardingStore"
-import { Activity } from "lucide-react"
+import { Flame } from "lucide-react"
 import { Link } from "react-router-dom"
 import Step1CreateAccount from "./Step1CreateAccount"
 import Step2PersonalDetails from "./Step2PersonalDetails"
@@ -31,7 +31,7 @@ export default function OnboardingLayout() {
         <div className="p-6 md:p-8 flex justify-between items-center z-10 relative bg-background/80 backdrop-blur-sm">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="bg-primary p-1 rounded-none">
-              <Activity className="h-5 w-5 text-primary-foreground" />
+              <Flame className="h-5 w-5 text-primary-foreground fill-current" />
             </div>
             <span className="font-black text-lg tracking-[0.2em] uppercase text-foreground">Fit<span className="text-primary">Nation</span></span>
           </Link>

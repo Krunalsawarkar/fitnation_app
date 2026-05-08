@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Activity } from "lucide-react"
+import { Flame } from "lucide-react"
 import { MotionBackground } from "@/components/layout/MotionBackground"
 
 interface OnboardingVisualProps {
@@ -19,7 +19,7 @@ export function OnboardingVisual({ currentStep }: OnboardingVisualProps) {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="w-16 h-16 bg-card/80 backdrop-blur-md rounded-none flex items-center justify-center mb-8 border-2 border-primary">
-            <Activity className="w-8 h-8 text-primary" />
+            <Flame className="w-8 h-8 text-primary fill-current" />
           </div>
           <h2 className="text-5xl font-black mb-6 leading-tight uppercase tracking-tighter text-foreground">
             {currentStep === 1 && "Start your transformation today."}

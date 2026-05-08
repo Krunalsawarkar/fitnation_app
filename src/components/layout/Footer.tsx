@@ -1,5 +1,5 @@
 import React from "react"
-import { Activity } from "lucide-react"
+import { Flame } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6 group">
               <div className="bg-primary p-1 rounded-none transition-transform">
-                <Activity className="h-6 w-6 text-primary-foreground" />
+                <Flame className="h-6 w-6 text-primary-foreground fill-current" />
               </div>
               <span className="font-black text-2xl tracking-[0.2em] uppercase text-foreground">
                 Fit<span className="text-primary">Nation</span>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
-import { Activity, Menu, X } from "lucide-react"
+import { Flame, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 
@@ -28,7 +28,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="bg-primary p-1 rounded-none">
-            <Activity className="h-6 w-6 text-primary-foreground" />
+            <Flame className="h-6 w-6 text-primary-foreground fill-current" />
           </div>
           <span className="font-black text-2xl tracking-[0.2em] uppercase text-foreground">
             Fit<span className="text-primary">Nation</span>

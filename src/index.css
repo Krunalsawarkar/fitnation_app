@@ -58,10 +58,15 @@
     --border: 0 0% 15%;
     --input: 0 0% 15%;
     --ring: 18 100% 50%;
+    
+    color-scheme: dark;
   }
 }
 
 @layer base {
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    @apply dark:invert;
+  }
   * {
     @apply border-border;
   }

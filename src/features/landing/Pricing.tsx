@@ -1,9 +1,5 @@
-import React from "react"
 import { motion } from "framer-motion"
-import { Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Link } from "react-router-dom"
+import { PricingCard } from "./components/PricingCard"
 
 const tiers = [
   {
@@ -61,38 +57,7 @@ export default function Pricing() {
                   Most Popular
                 </div>
               )}
-              <Card className={`h-full flex flex-col ${tier.popular ? 'border-primary shadow-xl border-2' : 'border-border shadow-sm'}`}>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                  <CardDescription>{tier.description}</CardDescription>
-                  <div className="mt-4 flex items-baseline text-5xl font-extrabold">
-                    {tier.price}
-                    {tier.period && <span className="ml-1 text-xl font-medium text-muted-foreground">{tier.period}</span>}
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <ul className="space-y-4">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3">
-                        <div className="rounded-full p-1 bg-primary/10 text-primary">
-                          <Check className="w-4 h-4" />
-                        </div>
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Link to="/onboarding" className="w-full">
-                    <Button 
-                      className="w-full h-12" 
-                      variant={tier.buttonVariant as "default" | "outline"}
-                    >
-                      {tier.name === "Free" ? "Get Started" : "Subscribe"}
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
+              <PricingCard {...tier} />
             </motion.div>
           ))}
         </div>

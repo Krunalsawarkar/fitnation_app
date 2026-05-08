@@ -1,7 +1,6 @@
-import React from "react"
 import { Activity, Apple, LineChart, Users } from "lucide-react"
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { FeatureCard } from "./components/FeatureCard"
 
 const features = [
   {
@@ -55,19 +54,7 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full border-none shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-background">
-                <CardHeader>
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${feature.bgColor}`}>
-                    <feature.icon className={`w-6 h-6 ${feature.color}`} />
-                  </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+              <FeatureCard {...feature} />
             </motion.div>
           ))}
         </div>

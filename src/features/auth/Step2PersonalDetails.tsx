@@ -23,8 +23,9 @@ type FormData = z.infer<typeof schema>
 export default function Step2PersonalDetails() {
   const { data, updateData, nextStep, prevStep } = useOnboardingStore()
   
-  const { register, handleSubmit, control, watch, setValue, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, control, watch, setValue, formState: { errors, isValid } } = useForm<FormData>({
     resolver: zodResolver(schema),
+    mode: "onChange",
     defaultValues: {
       dob: data.dob ? new Date(data.dob).toISOString().split('T')[0] : "",
       gender: data.gender || "",
@@ -178,7 +179,7 @@ export default function Step2PersonalDetails() {
           <Button type="button" variant="outline" className="h-12 w-12 p-0" onClick={prevStep}>
             <ArrowLeft className="w-5 h-5" />
           </Button>
-          <Button type="submit" className="h-12 flex-1">
+          <Button type="submit" className="h-12 flex-1" disabled={!isValid}>
             Continue <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>

@@ -24,8 +24,9 @@ const goalOptions = [
 export default function Step3FitnessGoals() {
   const { data, updateData, nextStep, prevStep } = useOnboardingStore()
   
-  const { handleSubmit, control, formState: { errors } } = useForm<FormData>({
+  const { handleSubmit, control, formState: { errors, isValid } } = useForm<FormData>({
     resolver: zodResolver(schema),
+    mode: "onChange",
     defaultValues: {
       goals: data.goals || [],
     }
@@ -97,7 +98,7 @@ export default function Step3FitnessGoals() {
           <Button type="button" variant="outline" className="h-12 w-12 p-0" onClick={prevStep}>
             <ArrowLeft className="w-5 h-5" />
           </Button>
-          <Button type="submit" className="h-12 flex-1">
+          <Button type="submit" className="h-12 flex-1" disabled={!isValid}>
             Continue <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>

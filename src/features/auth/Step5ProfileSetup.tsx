@@ -24,8 +24,9 @@ export default function Step5ProfileSetup() {
   const [isCompleting, setIsCompleting] = useState(false)
   const [avatarPreview, setAvatarPreview] = useState<string | null>(data.avatar || null)
   
-  const { register, handleSubmit, control, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, control, formState: { errors, isValid } } = useForm<FormData>({
     resolver: zodResolver(schema),
+    mode: "onChange",
     defaultValues: {
       username: data.username || "",
       bio: data.bio || "",
@@ -150,7 +151,7 @@ export default function Step5ProfileSetup() {
           <Button type="button" variant="outline" className="h-12 w-12 p-0" onClick={prevStep}>
             <ArrowLeft className="w-5 h-5" />
           </Button>
-          <Button type="submit" className="h-12 flex-1 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 border-0">
+          <Button type="submit" className="h-12 flex-1 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 border-0" disabled={!isValid}>
             Complete Setup <Check className="w-4 h-4 ml-2" />
           </Button>
         </div>

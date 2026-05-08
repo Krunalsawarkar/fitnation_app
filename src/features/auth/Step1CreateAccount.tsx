@@ -25,8 +25,9 @@ export default function Step1CreateAccount() {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
   
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, watch, formState: { errors, isValid } } = useForm<FormData>({
     resolver: zodResolver(schema),
+    mode: "onChange",
     defaultValues: {
       name: data.name || "",
       email: data.email || "",
@@ -129,7 +130,7 @@ export default function Step1CreateAccount() {
           {errors.confirmPassword && <p className="text-sm text-destructive">{errors.confirmPassword.message}</p>}
         </div>
 
-        <Button type="submit" className="w-full h-12 text-base mt-8">
+        <Button type="submit" className="w-full h-12 text-base mt-8" disabled={!isValid}>
           Continue
         </Button>
 

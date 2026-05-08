@@ -47,11 +47,19 @@ A high-fidelity interface for biometric monitoring and activity orchestration.
 
 ---
 
-## 🏗 Component Architecture
-- **Feature-Based Domain Isolation**: Components are organized by feature domain (`src/features/auth`, `src/features/dashboard`, `src/features/landing`) to ensure high cohesion and low coupling.
-- **Atomic UI Layer**: A foundation of base components in `src/components/ui` (Button, Card, Input) that follow strict design tokens.
-- **Strategic Context**: Custom `ThemeProvider` with defensive `localStorage` handling to ensure reliability across all browser environments.
-- **Validation Protocols**: Every biometric data point is strictly validated using Zod schemas to ensure system-wide data integrity.
+## 🏗 Component Architecture & Reusable Patterns
+
+### 1. Architecture: Feature-Based Domain Isolation
+The codebase follows a modular feature-based structure to ensure scalability and maintainability:
+- **`src/features/`**: Contains self-contained modules (Auth, Dashboard, Landing) with their own components, logic, and sub-features.
+- **`src/components/ui/`**: A library of atomic, stateless UI components following consistent design tokens.
+- **`src/store/`**: Centralized global state management using Zustand for biometric data and theme persistence.
+
+### 2. Reusable Patterns
+- **HOC Theme Injection**: A custom `ThemeProvider` context pattern that injects theme state and native `color-scheme` support across all UI layers.
+- **Biometric Input Patterns**: Reusable custom slider and radio group patterns designed for ergonomic biometric data entry.
+- **Kinetic Backgrounds**: A centralized `MotionBackground` component used across onboarding and landing pages to provide visual continuity.
+- **Schema-Driven Validation**: A recurring pattern of using Zod schemas coupled with React Hook Form for robust, type-safe data entry protocols.
 
 ---
 

@@ -56,7 +56,7 @@ export function MotionBackground() {
       </svg>
 
       {/* Subtle Grain/Noise Overlay */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/p6.png')]" />
       
       {/* Radial Gradient for depth - adjusted to use background color for falloff */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,hsl(var(--background)/0.8)_100%)]" />

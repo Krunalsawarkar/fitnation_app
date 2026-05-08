@@ -13,13 +13,15 @@ The landing page features a motion-driven hero section with "Masked Heading" eme
 
 | Dark Mode (Architectural) | Light Mode (Clean) |
 | :---: | :---: |
-| ![Landing Dark](https://via.placeholder.com/600x400?text=Landing+Page+Dark+Mode) | ![Landing Light](https://via.placeholder.com/600x400?text=Landing+Page+Light+Mode) |
+| ![Landing Dark](public/screenshots/landing-dark.png) | ![Landing Light](public/screenshots/landing-light.png) |
 
 - **Dynamic Theming**: Seamless switching between High-Contrast Dark and Pure Light modes.
 - **Motion Backgrounds**: Interactive SVG trails that provide depth and cinematic energy.
 
 ### 2. Biometric Onboarding Flow
 A multi-step, strictly validated flow built with **React Hook Form** and **Zod**.
+![Onboarding Flow](public/screenshots/onboarding.png)
+
 - **Account Creation**: Secure credentials setup with real-time complexity tracking.
 - **Biometric Calibration**: Precision sliders for height and weight calibration.
 - **Protocol Selection**: Goal-oriented selection (Weight Loss, Muscle Build, Flexibility) with architectural cards.
@@ -27,6 +29,8 @@ A multi-step, strictly validated flow built with **React Hook Form** and **Zod**
 
 ### 3. Protocol Command Center (Dashboard)
 A high-fidelity interface for biometric monitoring and activity orchestration.
+![Dashboard View](public/screenshots/dashboard.png)
+
 - **Metabolic Burn Tracking**: Real-time caloric output visualization.
 - **Biometric Flow**: 7-cycle metabolic output analytics.
 - **Active Protocol**: Direct management of structural integrity workouts.

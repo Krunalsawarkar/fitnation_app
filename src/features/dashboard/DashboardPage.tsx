@@ -4,16 +4,13 @@ import { Flame, Dumbbell, Calendar, Target } from "lucide-react"
 import { StatsCard } from "./components/StatsCard"
 import { TodayWorkout } from "./components/TodayWorkout"
 import { ActivityChart } from "./components/ActivityChart"
+import { MotionBackground } from "@/components/layout/MotionBackground"
+import { MaskedHeading } from "@/components/ui/MaskedHeading"
+
+import { motion } from "framer-motion"
 
 export default function DashboardPage() {
   const { data } = useOnboardingStore()
-
-  const stats = [
-    { label: "Calories Burned", value: "2,450", unit: "kcal", icon: Flame, color: "text-orange-500", bg: "bg-orange-500/10" },
-    { label: "Workouts", value: "4", unit: "this week", icon: Dumbbell, color: "text-blue-500", bg: "bg-blue-500/10" },
-    { label: "Streak", value: "12", unit: "days", icon: Calendar, color: "text-purple-500", bg: "bg-purple-500/10" },
-    { label: "Goal Progress", value: "68", unit: "%", icon: Target, color: "text-green-500", bg: "bg-green-500/10" },
-  ]
 
   const todayWorkout = [
     { id: 1, name: "Barbell Squats", sets: "3 sets x 10 reps", completed: true },
@@ -32,32 +29,54 @@ export default function DashboardPage() {
     { value: 650, day: "Sun" },
   ]
 
+  const stats = [
+    { label: "Metabolic Burn", value: "2,450", unit: "KCAL", icon: Flame, color: "text-primary", bg: "bg-primary/5" },
+    { label: "Sessions", value: "4", unit: "SESSIONS", icon: Dumbbell, color: "text-foreground", bg: "bg-foreground/5" },
+    { label: "Continuity", value: "12", unit: "DAYS", icon: Calendar, color: "text-primary", bg: "bg-primary/5" },
+    { label: "Efficiency", value: "68", unit: "PERCENT", icon: Target, color: "text-foreground", bg: "bg-foreground/5" },
+  ]
+
   return (
     <DashboardLayout>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2 tracking-tight">
-          Welcome back, {data.username || data.name?.split(' ')[0] || "Athlete"}! 👋
-        </h1>
-        <p className="text-muted-foreground">Here's your fitness overview for today.</p>
-      </div>
+      <div className="relative min-h-screen bg-background text-foreground p-8 overflow-hidden">
+        <MotionBackground />
+        
+        <div className="relative z-10">
+          <div className="mb-12">
+            <motion.span 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block"
+            >
+              Protocol Active
+            </motion.span>
+            <MaskedHeading className="text-5xl md:text-7xl mb-4 text-foreground">
+              {data.username || data.name?.split(' ')[0] || "Athlete"}
+            </MaskedHeading>
+            <p className="text-muted-foreground font-medium uppercase tracking-widest text-sm">
+              Biometric status: Optimal
+            </p>
+          </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        {stats.map((stat, i) => (
-          <StatsCard key={i} {...stat} />
-        ))}
-      </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {stats.map((stat, i) => (
+              <StatsCard key={i} {...stat} />
+            ))}
+          </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <TodayWorkout 
-          title="Today's Workout" 
-          description="Lower Body Strength" 
-          exercises={todayWorkout} 
-        />
-        <ActivityChart 
-          title="Activity Overview" 
-          description="Calories burned over the last 7 days" 
-          data={activityData} 
-        />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <TodayWorkout 
+              title="Active Protocol" 
+              description="Lower Body Structural Integrity" 
+              exercises={todayWorkout} 
+            />
+            <ActivityChart 
+              title="Biometric Flow" 
+              description="Metabolic output over 7 cycles" 
+              data={activityData} 
+            />
+          </div>
+        </div>
       </div>
     </DashboardLayout>
   )

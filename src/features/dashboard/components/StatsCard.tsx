@@ -1,4 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
 import type { LucideIcon } from "lucide-react"
 
 interface StatsCardProps {
@@ -12,21 +13,19 @@ interface StatsCardProps {
 
 export function StatsCard({ label, value, unit, icon: Icon, color, bg }: StatsCardProps) {
   return (
-    <Card className="border-none shadow-sm hover:shadow-md transition-shadow">
-      <CardContent className="p-4 md:p-6 flex flex-col justify-between h-full gap-4">
-        <div className="flex justify-between items-start">
-          <div className={`p-2 rounded-lg ${bg}`}>
-            <Icon className={`w-5 h-5 ${color}`} />
-          </div>
+    <Card className="p-6 group border-border hover:border-primary transition-all bg-card/40 backdrop-blur-sm">
+      <div className="flex justify-between items-start mb-6">
+        <div className={cn("p-3 rounded-none border-2 border-primary/20 group-hover:border-primary group-hover:bg-primary transition-all", bg)}>
+          <Icon className={cn("w-6 h-6 group-hover:text-primary-foreground transition-colors", color)} />
         </div>
-        <div>
-          <p className="text-sm text-muted-foreground font-medium mb-1">{label}</p>
-          <div className="flex items-baseline gap-1">
-            <h3 className="text-2xl md:text-3xl font-bold">{value}</h3>
-            <span className="text-xs text-muted-foreground">{unit}</span>
-          </div>
+      </div>
+      <div>
+        <p className="text-xs text-muted-foreground font-black uppercase tracking-[0.2em] mb-2">{label}</p>
+        <div className="flex items-baseline gap-2">
+          <h3 className="text-4xl font-black tracking-tighter text-foreground">{value}</h3>
+          <span className="text-xs text-primary font-bold uppercase tracking-tighter">{unit}</span>
         </div>
-      </CardContent>
+      </div>
     </Card>
   )
 }

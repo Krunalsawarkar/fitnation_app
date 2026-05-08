@@ -29,11 +29,11 @@ export default function OnboardingLayout() {
       {/* Left Side - Form */}
       <div className="flex-1 flex flex-col relative">
         <div className="p-6 md:p-8 flex justify-between items-center z-10 relative bg-background/80 backdrop-blur-sm">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="bg-primary p-1 rounded-md">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="bg-primary p-1 rounded-none">
               <Activity className="h-5 w-5 text-primary-foreground" />
             </div>
-            <span className="font-bold text-lg tracking-tight">FitTrack</span>
+            <span className="font-black text-lg tracking-[0.2em] uppercase text-foreground">Fit<span className="text-primary">Nation</span></span>
           </Link>
           <div className="text-sm font-medium text-muted-foreground bg-secondary px-3 py-1 rounded-full">
             Step {currentStep} of 5

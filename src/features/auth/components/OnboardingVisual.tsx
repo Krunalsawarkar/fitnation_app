@@ -29,7 +29,7 @@ export function OnboardingVisual({ currentStep }: OnboardingVisualProps) {
             {currentStep === 5 && "Join the community."}
           </h2>
           <p className="text-xl text-muted-foreground font-medium">
-            {currentStep === 1 && "Join thousands of users who have already achieved their fitness goals with FitTrack."}
+            {currentStep === 1 && "Join thousands of users who have already achieved their fitness goals with FitNation."}
             {currentStep === 2 && "We use these details to calculate your BMI and daily caloric needs accurately."}
             {currentStep === 3 && "Whether you want to lose weight or build muscle, we have the perfect plan."}
             {currentStep === 4 && "Your daily activity level helps us recommend the right intensity for your workouts."}

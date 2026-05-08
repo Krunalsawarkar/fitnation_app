@@ -65,7 +65,8 @@
 
 @layer base {
   input[type="date"]::-webkit-calendar-picker-indicator {
-    @apply dark:invert;
+    /* Rely on color-scheme: dark; but provide a fallback if needed */
+    cursor: pointer;
   }
   * {
     @apply border-border;

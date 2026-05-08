@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# FitNation — Architectural Fitness & Wellness Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FitNation is a premium, high-performance fitness platform designed with surgical precision. It features a cinematic user interface, organic motion effects, and a robust theme-aware design system.
 
-Currently, two official plugins are available:
+![Landing Page Placeholder](https://via.placeholder.com/1200x600?text=FitNation+Landing+Page)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Quick Start
 
-## React Compiler
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:Krunalsawarkar/fitnation_app.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
+- **Frontend**: React 18, Vite, TypeScript
+- **Styling**: Tailwind CSS (Custom Design System)
+- **Animations**: Framer Motion
+- **State Management**: Zustand
+- **Form Handling**: React Hook Form + Zod (Strict Validation)
+- **Icons**: Lucide React
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎨 Design Decisions
+- **Aesthetic**: "Elite Performance" vibe. Uses high-contrast black/white backgrounds with vibrant `#FF4D00` orange accents.
+- **Geometry**: Sharp architectural edges (`border-radius: 0`) to convey precision and structural integrity.
+- **Motion**: organic, fluid light trails in the background that react to theme changes, and "masked" heading emergence for a cinematic feel.
+- **Theming**: Full CSS-variable-based theme system allowing seamless switching between Dark and Light modes while maintaining brand identity.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🏗 Component Architecture
+- **Feature-Based Structure**: Components are organized by feature domain (auth, dashboard, landing) to ensure scalability.
+- **Atomic UI**: A robust set of base components (`Button`, `Card`, `Input`) that follow strict design tokens.
+- **Theme-Aware Logic**: Custom `ThemeProvider` and `useTheme` hook to manage global UI state.
+- **Validation Protocols**: Every input is strictly validated using Zod schemas to ensure biometric data integrity.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📸 Screenshots
+- **Landing Page**: Cinematic hero section with interactive motion.
+- **Onboarding Flow**: multi-step biometric setup with real-time validation.
+- **Dashboard**: High-fidelity command center with metabolic tracking and activity visualization.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔗 Live Demo
+[View Live Demo](https://fitnation-app-demo.vercel.app) *(Placeholder)*
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+Designed and Built by **Krunal Sawarkar**

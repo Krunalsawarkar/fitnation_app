@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-primary p-1 rounded-none group-hover:rotate-12 transition-transform">
+          <div className="bg-primary p-1 rounded-none">
             <Activity className="h-6 w-6 text-primary-foreground" />
           </div>
           <span className="font-black text-2xl tracking-[0.2em] uppercase text-foreground">

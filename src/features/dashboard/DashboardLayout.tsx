@@ -27,7 +27,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col w-64 border-r-2 border-border bg-background/50 backdrop-blur-xl fixed inset-y-0 z-20">
         <Link to="/" className="p-8 flex items-center gap-3 group">
-          <div className="bg-primary p-2 rounded-none group-hover:rotate-12 transition-transform">
+          <div className="bg-primary p-2 rounded-none">
             <Activity className="h-6 w-6 text-primary-foreground" />
           </div>
           <span className="font-black text-xl tracking-[0.2em] uppercase">Fit<span className="text-primary">Nation</span></span>
@@ -158,7 +158,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             >
               <div className="p-8 flex items-center justify-between border-b-2 border-border">
                 <Link to="/" className="flex items-center gap-3 group">
-                  <Activity className="h-6 w-6 text-primary group-hover:rotate-12 transition-transform" />
+                  <Activity className="h-6 w-6 text-primary" />
                   <span className="font-black text-xl tracking-widest uppercase">Fit<span className="text-primary">Nation</span></span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(false)} className="rounded-none">
